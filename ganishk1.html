@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #ff0000; 
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.movie-list {
+    margin: 20px;
+}
+
+.categories {
+    margin: 20px 0;
+}
+
+.categories button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.categories button:hover {
+    background-color: #e60000; 
+}
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.movie {
+    background-color: white;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BookMyShow</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="movie-list">
+            <h2 style="text-align: center;">Welcome</h2>
+            <div class="categories", style="text-align: center;">
+                <a href="ganishk2.html"><button>Continue</button></a>
+                
+            </div>
+            <div class="movies" id="movies"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 BookMyShow Clone</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

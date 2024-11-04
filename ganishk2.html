@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Ticket Booking</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #1e90ff, #ff6347);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      animation: slide-in 1.2s ease-in-out forwards;
+      transform: translateY(-100vh);
+    }
+
+    @keyframes slide-in {
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    label {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      animation: fade-in 2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fade-in {
+      100% {
+        opacity: 1;
+      }
+    }
+
+    select {
+      padding: 10px;
+      width: 100%;
+      border-radius: 10px;
+      background-color: #ff6347;
+      border: none;
+      color: white;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .screen {
+      width: 80%;
+      height: 20px;
+      background-color: #ffffff;
+      margin: 20px auto;
+      border-radius: 4px;
+    }
+
+    .seats-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .row {
+      display: flex;
+      margin-bottom: 5px;
+    }
+
+    .seat {
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      background-color: #444;
+      cursor: pointer;
+      transition: 0.5s;
+      border-radius: 5px;
+    }
+
+    .seat:hover {
+      transform: scale(1.2);
+      background-color: #fb0004;
+    }
+
+    .seat.selected {
+      background-color: #ff002f;
+    }
+
+    .seat.occupied {
+      background-color: #ff6347;
+      pointer-events: none;
+    }
+
+    .summary {
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    button {
+      background-color: #ff6347;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 1.1rem;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    button:hover {
+      background-color: #ff0000;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Movie Ticket Booking</h1>
+
+    <label for="movie">Select a Movie:</label>
+    <select id="movie">
+      <option value="12">KALKI ($12)</option>
+      <option value="10">GOAT ($10)</option>
+      <option value="8">DEVARA($8)</option>
+      <option value="9">BIGIL ($9)</option>
+    </select>
+
+    <div class="screen"></div>
+    <div class="seats-container">
+      
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+    </div>
+
+    <div class="summary">
+      <p>Selected Movie: <span id="movieName">None</span></p>
+      <p>Seats Selected: <span id="count">0</span></p>
+      <p>Total Price: $<span id="total">0</span></p>
+    </div>
+
+    <a href="ganishk3.html"><button>Confirm Booking</button></a>
+  </div>
+
+  <script>
+    const container = document.querySelector('.seats-container');
+    const seats = document.querySelectorAll('.row .seat:not(.occupied)');
+    const count = document.getElementById('count');
+    const total = document.getElementById('total');
+    const movieSelect = document.getElementById('movie');
+    const movieName = document.getElementById('movieName');
+
+    let ticketPrice = +movieSelect.value;
+
+    
+    function updateSelectedCount() {
+      const selectedSeats = document.querySelectorAll('.row .seat.selected');
+      const selectedSeatsCount = selectedSeats.length;
+
+      count.innerText = selectedSeatsCount;
+      total.innerText = selectedSeatsCount * ticketPrice;
+
+      movieName.innerText = movieSelect.options[movieSelect.selectedIndex].text;
+    }
+
+    
+    movieSelect.addEventListener('change', (e) => {
+      ticketPrice = +e.target.value;
+      updateSelectedCount();
+    });
+
+    
+    container.addEventListener('click', (e) => {
+      if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
+        e.target.classList.toggle('selected');
+        updateSelectedCount();
+      }
+    });
+  </script>
+</body>
+</html>
